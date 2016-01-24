@@ -349,6 +349,29 @@
          />
 </LinearLayout>
 
+<LinearLayout 
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+>
+
+<com.bluet.massistant.CircleButton
+         android:id="@+id/upload_file"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:layout_weight="1"
+         android:layout_gravity="center"
+         />
+<com.bluet.massistant.CircleButton
+         android:id="@+id/check_update"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:layout_weight="1"
+         android:layout_gravity="center"
+         />
+</LinearLayout>
+
 </LinearLayout>
 
 

@@ -6,6 +6,7 @@ import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.annotation.SuppressLint;
@@ -213,7 +214,7 @@ public class MainActivity extends Activity {
                 	sendMessage(send1);
                 }} );
                 
-         send2[0]=(byte) 0x01;send2[1]=(byte) 0x09;send2[2]=(byte) 0x01;
+        send2[0]=(byte) 0x01;send2[1]=(byte) 0x09;send2[2]=(byte) 0x01;
      	send2[3]=(byte) 0x00;send2[4]=(byte) 0x0B;send2[5]=(byte) 0x00;
      	send2[6]=(byte) 0xCC;send2[7]=(byte) 0x33;
      	c = res.getColor(R.color.keyr);
@@ -269,8 +270,30 @@ public class MainActivity extends Activity {
                 	sendMessage(send5);		
                 }} );
          
-         
-       
+         //upload file
+         butta = (CircleButton) findViewById(R.id.upload_file);
+         butta.setColor(c); //设置按钮的着色
+         butta.setText("上传文件");//按钮字符
+         butta.setOnClickListener(new OnClickListener() {
+                public void onClick(View v) {
+                File root = new File(Environment.getExternalStorageDirectory().toString().concat("/Assistant_Data/"));
+                File[] files = root.listFiles();
+                for (File file : files) {
+                	file.getName();
+                	Utils.UploadFile(file);
+                }
+                }} );
+         // check update
+         butta = (CircleButton) findViewById(R.id.check_update);
+         butta.setColor(c); //设置按钮的着色
+         butta.setText("检查更新");//按钮字符
+         butta.setOnClickListener(new OnClickListener() {
+                public void onClick(View v) {
+                	Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, UpdateActivity.class);
+                	startActivity(intent);
+                }} );
+       // back
      	send6[0]=(byte) 0x01;send6[1]=(byte) 0x08;send6[2]=(byte) 0x01;
      	send6[3]=(byte) 0x01;send6[4]=(byte) 0x0B;send6[5]=(byte) 0x00;
      	send6[6]=(byte) 0xCC;send6[7]=(byte) 0x33;
