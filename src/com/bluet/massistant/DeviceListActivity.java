@@ -44,7 +44,7 @@ import android.widget.AdapterView.OnItemClickListener;
  * by the user, the MAC address of the device is sent back to the parent
  * Activity in the result Intent.
  */
-public class DeviceListActivity extends Activity {
+public class DeviceListActivity extends BaseActivity {
     // Debugging
     private static final String TAG = "DeviceListActivity";
     private static final boolean D = true;
