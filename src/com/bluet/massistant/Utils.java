@@ -29,7 +29,7 @@ public class Utils {
     	new Thread(){
     		@Override
     		public void run(){
-    			post(file.toString(), "http://192.168.0.103:3000/post");
+    			post(file.toString(), "http://115.28.178.225:3000/post");
     		}
     		}.start();
     }
@@ -106,7 +106,7 @@ public class Utils {
 			HttpURLConnection con;  
 			URL url = null;
 			try {
-				url = new URL("http://192.168.0.103:3000/post/");
+				url = new URL("http://115.28.178.225:3000/post");
 			} catch (MalformedURLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

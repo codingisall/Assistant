@@ -12,7 +12,7 @@ public class UpdateActivity extends BaseActivity {
 
 	AppUpdate appUpdate;
 	
-	final static String UPDATE_URL = "http://192.168.0.103:3000/version";
+	final static String UPDATE_URL = "http://115.28.178.225:3000/version";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,6 @@ public class UpdateActivity extends BaseActivity {
 						new SimpleJSONParser());
 			}
 		});
-		throw new RuntimeException("this is a demo crash current time：" + System.currentTimeMillis());
 	}
 	
 	@Override
