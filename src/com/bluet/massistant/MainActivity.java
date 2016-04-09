@@ -206,7 +206,7 @@ public class MainActivity extends BaseActivity {
       	send1[6]=(byte) 0xcc;send1[7]=(byte) 0x33;
          butta = (CircleButton) findViewById(R.id.cbutton1);
          butta.setColor(c); //设置按钮的着色
-         butta.setText("左转向");//按钮字符
+         butta.setText("进血");//按钮字符
          butta.set_datab(send1);
          butta.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
@@ -235,7 +235,7 @@ public class MainActivity extends BaseActivity {
      	c = res.getColor(R.color.keyn);
          buttb = (CircleButton) findViewById(R.id.cbutton21);
          buttb.setColor(c); 
-         buttb.setText("前进");
+         buttb.setText("清洗");
          buttb.set_datab(send3);
          buttb.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
@@ -248,7 +248,7 @@ public class MainActivity extends BaseActivity {
      	send4[6]=(byte) 0xCC;send4[7]=(byte) 0x33;
          buttb = (CircleButton) findViewById(R.id.cbutton22);
          buttb.setColor(c); 
-         buttb.setText("右转向");
+         buttb.setText("清空");
          buttb.set_datab(send4);
          buttb.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
@@ -312,7 +312,8 @@ public class MainActivity extends BaseActivity {
              public void run() {
             	 BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(lastdevice);
                  // Attempt to connect to the device
-                 mChatService.connect(device);
+            	 if (mChatService != null)
+                   mChatService.connect(device);
                  AutoLink.stop();
                  frist_conect = true;
              }});
