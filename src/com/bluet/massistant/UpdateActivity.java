@@ -1,6 +1,5 @@
 package com.bluet.massistant;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -25,7 +24,6 @@ public class UpdateActivity extends BaseActivity {
 		check.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// 妫�煡鏈�柊鐗堟湰锛屽苟寮瑰嚭绐楀彛
 				appUpdate.checkLatestVersion(UPDATE_URL, 
 						new SimpleJSONParser());
 			}
@@ -34,8 +32,7 @@ public class UpdateActivity extends BaseActivity {
 		View download = findViewById(R.id.download);
 		download.setOnClickListener(new View.OnClickListener() {
 			@Override
-			public void onClick(View v) {
-				// 鏃犻』鎻愮ず锛岀洿鎺ュ崌绾�				
+			public void onClick(View v) {			
 				appUpdate.checkAndUpdateDirectly(UPDATE_URL, 
 						new SimpleJSONParser());
 			}
@@ -45,7 +42,6 @@ public class UpdateActivity extends BaseActivity {
 	@Override
 	protected void onResume(){
 		super.onResume();
-		
 		// ******** 
 		appUpdate.callOnResume();
 	}
