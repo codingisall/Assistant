@@ -186,7 +186,7 @@ public class BluetoothChatService {
         // Send a failure message back to the Activity
         Message msg = mHandler.obtainMessage(MainActivity.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
-        bundle.putString(MainActivity.TOAST, "Á¬½ÓÊ§°Ü");
+        bundle.putString(MainActivity.TOAST, "è¿æ¥å¤±è´¥");
         msg.setData(bundle);
         mHandler.sendMessage(msg);
     }
@@ -200,7 +200,7 @@ public class BluetoothChatService {
         // Send a failure message back to the Activity
         Message msg = mHandler.obtainMessage(MainActivity.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
-        bundle.putString(MainActivity.TOAST, "À¶ÑÀÒÑ¶Ï¿ªÁ¬½Ó");
+        bundle.putString(MainActivity.TOAST, "è“ç‰™å·²æ–­å¼€è¿æ¥");
         msg.setData(bundle);
         mHandler.sendMessage(msg);
     }

@@ -72,7 +72,7 @@ public class MainActivity extends BaseActivity {
 	static Timer onpress;
 	static Timer autosend;
     Timer RtmrBlink;
-    Timer AutoSend,AutoSend2;  //×Ô¶¯·¢ËÍ¶¨Ê±Æ÷
+    Timer AutoSend,AutoSend2;  //è‡ªåŠ¨å‘é€å®šæ—¶å™¨
     Timer AutoLink;
     static int RX_Count=0;
     static int TX_Count=0;
@@ -114,14 +114,14 @@ public class MainActivity extends BaseActivity {
         HEX_EN=(CheckBox)findViewById(R.id.checkbox1);
 		
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        // Èç¹ûÉè±¸Ã»ÓĞÀ¶ÑÀÄ£¿é¡£³ÌĞòÍË³ö
+        // å¦‚æœè®¾å¤‡æ²¡æœ‰è“ç‰™æ¨¡å—ã€‚ç¨‹åºé€€å‡º
             if (mBluetoothAdapter == null) {
                Toast.makeText(this, "Did not find the Bluetooth module, the program stops", Toast.LENGTH_LONG).show();
                finish();
                return;
            }
             
-          //Ê±¼ä¸üĞÂ  500ms
+          //æ—¶é—´æ›´æ–°  500ms
             time = new Time();
             time.setToNow();
             systime = new Timer(500, new Runnable() {
@@ -205,8 +205,8 @@ public class MainActivity extends BaseActivity {
       	send1[3]=(byte) 0x01;send1[4]=(byte) 0x08;send1[5]=(byte) 0x00;
       	send1[6]=(byte) 0xcc;send1[7]=(byte) 0x33;
          butta = (CircleButton) findViewById(R.id.cbutton1);
-         butta.setColor(c); //ÉèÖÃ°´Å¥µÄ×ÅÉ«
-         butta.setText("½øÑª");//°´Å¥×Ö·û
+         butta.setColor(c); //è®¾ç½®æŒ‰é’®çš„ç€è‰²
+         butta.setText("è¿›è¡€");//æŒ‰é’®å­—ç¬¦
          butta.set_datab(send1);
          butta.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
@@ -220,7 +220,7 @@ public class MainActivity extends BaseActivity {
      	c = res.getColor(R.color.keyr);
          buttb = (CircleButton) findViewById(R.id.cbutton2);
          buttb.setColor(c); 
-         buttb.setText("ÖØÆô");
+         buttb.setText("é‡å¯");
          buttb.set_datab(send2);
          buttb.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
@@ -235,7 +235,7 @@ public class MainActivity extends BaseActivity {
      	c = res.getColor(R.color.keyn);
          buttb = (CircleButton) findViewById(R.id.cbutton21);
          buttb.setColor(c); 
-         buttb.setText("ÇåÏ´");
+         buttb.setText("æ¸…æ´—");
          buttb.set_datab(send3);
          buttb.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
@@ -248,7 +248,7 @@ public class MainActivity extends BaseActivity {
      	send4[6]=(byte) 0xCC;send4[7]=(byte) 0x33;
          buttb = (CircleButton) findViewById(R.id.cbutton22);
          buttb.setColor(c); 
-         buttb.setText("Çå¿Õ");
+         buttb.setText("æ¸…ç©º");
          buttb.set_datab(send4);
          buttb.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
@@ -262,7 +262,7 @@ public class MainActivity extends BaseActivity {
      	c = res.getColor(R.color.keyr);
          buttb = (CircleButton) findViewById(R.id.cbutton4);
          buttb.setColor(c); 
-         buttb.setText("¹Ø±Õ");
+         buttb.setText("å…³é—­");
          //buttb.set_datab(send5);
          buttb.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
@@ -272,8 +272,8 @@ public class MainActivity extends BaseActivity {
          
          //upload file
          butta = (CircleButton) findViewById(R.id.upload_file);
-         butta.setColor(c); //ÉèÖÃ°´Å¥µÄ×ÅÉ«
-         butta.setText("ÉÏ´«ÎÄ¼ş");//°´Å¥×Ö·û
+         butta.setColor(c); //è®¾ç½®æŒ‰é’®çš„ç€è‰²
+         butta.setText("ä¸Šä¼ æ–‡ä»¶");//æŒ‰é’®å­—ç¬¦
          butta.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
                 File root = new File(Environment.getExternalStorageDirectory().toString().concat("/Assistant_Data/"));
@@ -285,8 +285,8 @@ public class MainActivity extends BaseActivity {
                 }} );
          // check update
          butta = (CircleButton) findViewById(R.id.check_update);
-         butta.setColor(c); //ÉèÖÃ°´Å¥µÄ×ÅÉ«
-         butta.setText("¼ì²é¸üĞÂ");//°´Å¥×Ö·û
+         butta.setColor(c); //è®¾ç½®æŒ‰é’®çš„ç€è‰²
+         butta.setText("æ£€æŸ¥æ›´æ–°");//æŒ‰é’®å­—ç¬¦
          butta.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
                 	Intent intent = new Intent();
@@ -300,7 +300,7 @@ public class MainActivity extends BaseActivity {
      	c = res.getColor(R.color.keyn);
          buttb = (CircleButton) findViewById(R.id.cbutton3);
          buttb.setColor(c); 
-         buttb.setText("ºóÍË");
+         buttb.setText("åé€€");
          //buttb.set_datab(send6);
          buttb.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
@@ -327,10 +327,10 @@ public class MainActivity extends BaseActivity {
 		lastdevice = config.getString("lastdevice_addr", "");
 		
 		if(lastdevice != ""){
-			AutoLink.restart(); //200msºó³¢ÊÔÁ¬½ÓÉè±¸
+			AutoLink.restart(); //200msåå°è¯•è¿æ¥è®¾å¤‡
 			
 		}else 
-			is_conect();//Ñ¯ÎÊÁ¬½ÓÉè±¸
+			is_conect();//è¯¢é—®è¿æ¥è®¾å¤‡
 		String temp = Read_config("myadress");
 		if((temp != "")&&(temp!=null)){
 			if(isnumber(temp))
@@ -346,9 +346,9 @@ public class MainActivity extends BaseActivity {
     boolean frist_conect = false;
 	void Save_config(String name,String Value){
 		SharedPreferences  share = this.getSharedPreferences("perference", MODE_PRIVATE);  
-        Editor editor = share.edit();//È¡µÃ±à¼­Æ÷  
-        editor.putString(name, Value);//´æ´¢ÅäÖÃ ²ÎÊı1 ÊÇkey ²ÎÊı2 ÊÇÖµ   
-        editor.commit();//Ìá½»Ë¢ĞÂÊı¾İ 
+        Editor editor = share.edit();//å–å¾—ç¼–è¾‘å™¨  
+        editor.putString(name, Value);//å­˜å‚¨é…ç½® å‚æ•°1 æ˜¯key å‚æ•°2 æ˜¯å€¼   
+        editor.commit();//æäº¤åˆ·æ–°æ•°æ® 
 	}
 	String Read_config(String name){
 		String temp;
@@ -363,17 +363,17 @@ public class MainActivity extends BaseActivity {
 		SharedPreferences config=this.getSharedPreferences("perference", MODE_PRIVATE);
 		lastdevice = config.getString("lastdevice_addr", "");
 		
-		new AlertDialog.Builder(this).setTitle("Á¬½ÓÇëÇó").setIcon(android.R.drawable.ic_menu_info_details)
-       	.setMessage("Èí¼ş²¢Ã»ÓĞÁ¬½ÓÀ¶ÑÀÉè±¸£¬ÇëÁ¬½ÓÉè±¸")
-       	.setPositiveButton("Á¬½ÓÉÏ´ÎµÄÉè±¸", new DialogInterface.OnClickListener() {
+		new AlertDialog.Builder(this).setTitle("è¿æ¥è¯·æ±‚").setIcon(android.R.drawable.ic_menu_info_details)
+       	.setMessage("è½¯ä»¶å¹¶æ²¡æœ‰è¿æ¥è“ç‰™è®¾å¤‡ï¼Œè¯·è¿æ¥è®¾å¤‡")
+       	.setPositiveButton("è¿æ¥ä¸Šæ¬¡çš„è®¾å¤‡", new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					if(lastdevice == ""){ //Ã»ÓĞÉè±¸£¬ÄÇ¾ÍÁ¬½ÓĞÂÉè±¸°É
+					if(lastdevice == ""){ //æ²¡æœ‰è®¾å¤‡ï¼Œé‚£å°±è¿æ¥æ–°è®¾å¤‡å§
 						
 						Intent serverIntent = new Intent(getApplicationContext(), DeviceListActivity.class);
 			            startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE);
 			        }else{
-			        	Log.d(TAG, "Á¬½Óµ½×î½üµÄÉè±¸"+lastdevice);
+			        	Log.d(TAG, "è¿æ¥åˆ°æœ€è¿‘çš„è®¾å¤‡"+lastdevice);
 			        	// Get the BLuetoothDevice object
 		                BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(lastdevice);
 		                // Attempt to connect to the device
@@ -381,7 +381,7 @@ public class MainActivity extends BaseActivity {
 			        }
 				}
 			})
-			.setNegativeButton("Á¬½ÓĞÂµÄÉè±¸", new DialogInterface.OnClickListener() {
+			.setNegativeButton("è¿æ¥æ–°çš„è®¾å¤‡", new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					// 
@@ -417,7 +417,7 @@ public class MainActivity extends BaseActivity {
 		    new AlertDialog.Builder(this)
 		      .setTitle(Title)
 		      .setView(addView)
-		      .setPositiveButton("È·¶¨",
+		      .setPositiveButton("ç¡®å®š",
 		                          new DialogInterface.OnClickListener() {
 		        public void onClick(DialogInterface dialog,
 		                              int whichButton) {
@@ -426,19 +426,19 @@ public class MainActivity extends BaseActivity {
 		        	int value;
 		        	//set_editor(wrapper.getTitleField().getText().toString(),wrapper.getValueField().getText().toString(),position,wrapper.read_vis());
 		        	if(Temp.equals("")||tar.equals("")){
-		        		Toast.makeText(getApplicationContext(), "ÊäÈëµÄÊı¾İÎª¿Õ¡£·ÅÆúĞŞ¸Ä...", Toast.LENGTH_LONG).show();
+		        		Toast.makeText(getApplicationContext(), "è¾“å…¥çš„æ•°æ®ä¸ºç©ºã€‚æ”¾å¼ƒä¿®æ”¹...", Toast.LENGTH_LONG).show();
 		        		return;
 		        	}
 		        	
 		        	if(isnumber(Temp)&&isnumber(tar)){
 		        		value = Integer.valueOf(Temp);
 		        		if(value >255){
-		        			Toast.makeText(getApplicationContext(), "µØÖ·³¬¹ı255¡£ĞŞ¸ÄÊ§°Ü...", Toast.LENGTH_LONG).show();
+		        			Toast.makeText(getApplicationContext(), "åœ°å€è¶…è¿‡255ã€‚ä¿®æ”¹å¤±è´¥...", Toast.LENGTH_LONG).show();
 			            	return;
 		        		}
 		        		value = Integer.valueOf(tar);
 		        		if(value >255){
-		        			Toast.makeText(getApplicationContext(), "µØÖ·³¬¹ı255¡£ĞŞ¸ÄÊ§°Ü...", Toast.LENGTH_LONG).show();
+		        			Toast.makeText(getApplicationContext(), "åœ°å€è¶…è¿‡255ã€‚ä¿®æ”¹å¤±è´¥...", Toast.LENGTH_LONG).show();
 			            	return;
 		        		}
 		        		value = Integer.valueOf(Temp);
@@ -448,7 +448,7 @@ public class MainActivity extends BaseActivity {
 		        		target_add = (byte)(value&0xff);
 		        		
 		            }else {
-		            	Toast.makeText(getApplicationContext(), "ÊäÈëÖĞ°üº¬·ÇÕûÊı¡£ĞŞ¸ÄÊ§°Ü...", Toast.LENGTH_LONG).show();
+		            	Toast.makeText(getApplicationContext(), "è¾“å…¥ä¸­åŒ…å«éæ•´æ•°ã€‚ä¿®æ”¹å¤±è´¥...", Toast.LENGTH_LONG).show();
 		            	return;
 		            }
 		        	
@@ -456,7 +456,7 @@ public class MainActivity extends BaseActivity {
 		        	Save_config("myadress",Temp);
 		        }
 		      })
-		      .setNegativeButton("È¡Ïû",
+		      .setNegativeButton("å–æ¶ˆ",
 		                          new DialogInterface.OnClickListener() {
 		        public void onClick(DialogInterface dialog,
 		                              int whichButton) {
@@ -617,10 +617,10 @@ public class MainActivity extends BaseActivity {
                 case BluetoothChatService.STATE_CONNECTED:
                     //mTitle.setText(R.string.title_connected_to);
                     //mTitle.append(mConnectedDeviceName);
-                	Toast.makeText(getApplicationContext(), "ÒÑ¾­Á¬½Óµ½-"+mConnectedDeviceName, Toast.LENGTH_LONG).show();
+                	Toast.makeText(getApplicationContext(), "å·²ç»è¿æ¥åˆ°-"+mConnectedDeviceName, Toast.LENGTH_LONG).show();
                 	mTitle.setText(R.string.title_connected_to);
                     mTitle.append(mConnectedDeviceName);
-                    Mconnectb.setText("¶Ï¿ªÁ¬½Ó");
+                    Mconnectb.setText("æ–­å¼€è¿æ¥");
                     frist_conect = false;
                     findhead = 0;buf_index =0;frame_len = 0;
                    head_en = false;
@@ -630,14 +630,14 @@ public class MainActivity extends BaseActivity {
                 	break;
                 case BluetoothChatService.STATE_CONNECTING:
                     //mTitle.setText(R.string.title_connecting);
-                	Toast.makeText(getApplicationContext(), "ÕıÔÚ³¢ÊÔÁ¬½ÓÔ¶³ÌÉè±¸...", Toast.LENGTH_LONG).show();
+                	Toast.makeText(getApplicationContext(), "æ­£åœ¨å°è¯•è¿æ¥è¿œç¨‹è®¾å¤‡...", Toast.LENGTH_LONG).show();
                 	mTitle.setText(R.string.title_connecting);
                 	break;
                 case BluetoothChatService.STATE_LISTEN:
                 case BluetoothChatService.STATE_NONE:
                     //mTitle.setText(R.string.title_not_connected);
                 	mTitle.setText(R.string.title_not_connected);
-                    Mconnectb.setText("Á¬½ÓÉè±¸");
+                    Mconnectb.setText("è¿æ¥è®¾å¤‡");
                     if(frist_conect){
                     	frist_conect = false;
                     			is_conect(); 
@@ -706,7 +706,7 @@ public class MainActivity extends BaseActivity {
     			}
     			databuf[buf_index++] = buf[i];
     			
-    			if(buf_index == (frame_len+5)){ //ÊÕÍêÒ»Ö¡ÁË¡£
+    			if(buf_index == (frame_len+5)){ //æ”¶å®Œä¸€å¸§äº†ã€‚
     				get_data(databuf,frame_len+5);
     				findhead = 0;
     				head_en = false;
@@ -721,7 +721,7 @@ public class MainActivity extends BaseActivity {
     void get_data(byte[] in, int len){
     	int i,isget = 0;
     	short  sum = 0,temp;
-    	Log.e("Decode", "±¾Ö¡ĞèÒªĞ£Ñé×Ö½Ú" + ((in[0]&0xff)));
+    	Log.e("Decode", "æœ¬å¸§éœ€è¦æ ¡éªŒå­—èŠ‚" + ((in[0]&0xff)));
     	for(i=0;i<(in[0]&0xff);i++){
     		sum += (in[i+1]&0xff);
     	}
@@ -734,36 +734,36 @@ public class MainActivity extends BaseActivity {
     	int index = 2;
     	TextView view =null ;
     	isget = 0;
-    	do{  //ÌáÈ¡Êı¾İ
-    		Log.e("Decode", "µ±Ç°   " +index);
-    		if(in[index] == (byte)0x01){//ËÙ¶È
+    	do{  //æå–æ•°æ®
+    		Log.e("Decode", "å½“å‰   " +index);
+    		if(in[index] == (byte)0x01){//é€Ÿåº¦
     			view = (TextView) findViewById(R.id.sp);
-    			Log.e("Decode", "ËÙ¶È ");
+    			Log.e("Decode", "é€Ÿåº¦ ");
     		}
-    		else if(in[index] == (byte)0x02){//¼ÓËÙ¶È
+    		else if(in[index] == (byte)0x02){//åŠ é€Ÿåº¦
     			view = (TextView) findViewById(R.id.acc);
-    			Log.e("Decode", "¼ÓËÙ¶È ");
+    			Log.e("Decode", "åŠ é€Ÿåº¦ ");
 			    		}
-    		else if(in[index] == (byte)0x03){//¸ß¶È
+    		else if(in[index] == (byte)0x03){//é«˜åº¦
     			view = (TextView) findViewById(R.id.high);
-    			Log.e("Decode", "¸ß¶È ");
+    			Log.e("Decode", "é«˜åº¦ ");
 			}
-    		else if(in[index] == (byte)0x04){//µçÁ¿
+    		else if(in[index] == (byte)0x04){//ç”µé‡
     			view = (TextView) findViewById(R.id.pow);
-    			Log.e("Decode", "µçÁ¿ ");
+    			Log.e("Decode", "ç”µé‡ ");
 			    		}
-    		else if(in[index] == (byte)0x05){//×ó×ªÏò
+    		else if(in[index] == (byte)0x05){//å·¦è½¬å‘
     			view = (TextView) findViewById(R.id.left);
-    			Log.e("Decode", "×ó×ªÏò ");
+    			Log.e("Decode", "å·¦è½¬å‘ ");
 			}
-    		index++; //×Ö½ÚÊıÁ¿
+    		index++; //å­—èŠ‚æ•°é‡
 			if(in[index] == (byte)0x01){
 				temp = (short) (in[index+1]&0xff);
-				Log.e("Decode", "1×Ö½Ú ");
+				Log.e("Decode", "1å­—èŠ‚ ");
 				index += 2;
 				isget += 3;
 			}else if(in[index] == (byte)0x02){
-				Log.e("Decode", "2×Ö½Ú ");
+				Log.e("Decode", "2å­—èŠ‚ ");
 				temp = (short) (((in[index+2]&0xff)<<8)|((in[index+1]&0xff)));
 				index += 3;
 				isget += 4;
@@ -788,7 +788,7 @@ public class MainActivity extends BaseActivity {
         	
             return true;
         case R.id.sett:
-        	AddSeting("µØÖ·ÉèÖÃ");
+        	AddSeting("åœ°å€è®¾ç½®");
         	break;
         case R.id.discoverable:
             // Ensure this device is discoverable by others
@@ -833,7 +833,7 @@ public class MainActivity extends BaseActivity {
             if (resultCode == Activity.RESULT_OK) {
                 // Bluetooth is now enabled, so set up a chat session
                 setupChat();
-                //("À¶ÑÀÆô¶¯³É¹¦...");
+                //("è“ç‰™å¯åŠ¨æˆåŠŸ...");
             } else {
                 // User did not enable Bluetooth or an error occured
                 Log.d(TAG, "Bluetooth not enabled");
@@ -917,19 +917,19 @@ public class MainActivity extends BaseActivity {
     		  int v=(int)(buffer[i]&0xFF);
     		  
     		  if(((v>47)&&(v<58)) || ((v>64)&&(v<71)) || ((v>96)&&(v<103))){
-    			  if(bit_st==0){//¸ßÎ»
+    			  if(bit_st==0){//é«˜ä½
     				  Log.v("getStringhex","F True");
     				Byte[index]|= (getASCvalue(buffer[i])*16);
     				Log.v("getStringhex",String.valueOf(Byte[index]));
     				bit_st=1;
-    			  }else {//µÍÎ»
+    			  }else {//ä½ä½
     				  Byte[index]|= (getASCvalue(buffer[i]));
     				  Log.v("getStringhex","F false");
     				  Log.v("getStringhex",String.valueOf(Byte[index]));
     				  bit_st=0;
       				index++;
     			  }
-    		  }else if (v==32){ //¿Õ¸ñ
+    		  }else if (v==32){ //ç©ºæ ¼
     			  Log.v("getStringhex","spance");
     			  if(bit_st==0);
     			  else{
@@ -1018,7 +1018,7 @@ public class MainActivity extends BaseActivity {
 	    public void write_head(){
 	    	String head;
 	    	initial_name();
-	    	head = "Ä¿±êµØÖ·,ËÙ¶È,¼ÓËÙ¶È,µçÁ¿,×ó×ªÏò,¸ß¶È,Ê±¼ä\r\n";
+	    	head = "ç›®æ ‡åœ°å€,é€Ÿåº¦,åŠ é€Ÿåº¦,ç”µé‡,å·¦è½¬å‘,é«˜åº¦,æ—¶é—´\r\n";
 	    	mual_file = "Rec-"+csv_fname;
 	    	Write_File(head,mual_file);
 	    	Save_file_en = true;
@@ -1030,7 +1030,7 @@ public class MainActivity extends BaseActivity {
 	    void Write_a_list(){
 			String  data=target_add+",";
 			TextView view;
-			//data = "²âÊÔ°æ±¾µÄÈí¼ş£¬Ã»ÓĞ¼ÇÂ¼¹¦ÄÜ"+Latitude+","+Longitude;
+			//data = "æµ‹è¯•ç‰ˆæœ¬çš„è½¯ä»¶ï¼Œæ²¡æœ‰è®°å½•åŠŸèƒ½"+Latitude+","+Longitude;
 			view = (TextView) findViewById(R.id.sp);
 			data += view.getText()+",";
 			
@@ -1059,7 +1059,7 @@ public class MainActivity extends BaseActivity {
 	            // File destDir = new File("/data/data/lisn3188.chip7/files/"); 
 	             File destDir = new File("/sdcard/Assistant_Data/"); 
 	        	 if (!destDir.exists()) {
-	                 destDir.mkdirs();//´´½¨ÎÄ¼ş¼Ğ
+	                 destDir.mkdirs();//åˆ›å»ºæ–‡ä»¶å¤¹
 	                }
 	          try 
 	          {
@@ -1067,13 +1067,13 @@ public class MainActivity extends BaseActivity {
 		           OutputStreamWriter writer = new OutputStreamWriter(outStream,"gb2312");
 		           writer.write(str);
 		           writer.flush();
-		           writer.close();//¼ÇµÃ¹Ø±Õ
+		           writer.close();//è®°å¾—å…³é—­
 		           outStream.close();
 	           }
 	          catch (Exception e)
 	          {
-	           Toast.makeText(getApplicationContext(), "/sdcard/Assistant_Data/"+".txt ´íÎó", Toast.LENGTH_SHORT).show();
-	        	  //show_msg("/sdcard/GPS Save/"+file_name+".txt ´íÎó");
+	           Toast.makeText(getApplicationContext(), "/sdcard/Assistant_Data/"+".txt é”™è¯¯", Toast.LENGTH_SHORT).show();
+	        	  //show_msg("/sdcard/GPS Save/"+file_name+".txt é”™è¯¯");
 	        	  Log.e("m", "file write error");
 	          }
 	         }
