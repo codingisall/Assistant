@@ -408,7 +408,7 @@ public class MainActivity extends BaseActivity {
 	private void AddSeting(String Title) {
 	    
 		   LayoutInflater inflater=LayoutInflater.from(this);
-		    View addView=inflater.inflate(R.layout.add_editled, null);
+		    View addView=inflater.inflate(R.layout.set_address, null);
 		    final DialogWrapper wrapper=new DialogWrapper(addView);
 		    
 		    wrapper.setnametext(""+my_add);

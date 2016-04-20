@@ -1,25 +1,53 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".UpdateActivity" >
+    android:layout_weight="2"
+    android:paddingTop="40px" >
 
-    <Button
-        android:id="@+id/check"
-        android:layout_width="fill_parent"
+<LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check and SHOW latest version dialog" />
+        android:orientation="vertical"
+        android:id="@+id/params_set"
+        android:layout_weight="1"
+        android:gravity= "center">"
+        <ImageView
+            android:id="@+id/params_set_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/set_params"
+            android:background="#00000000"
+        /> 
+        <TextView
+            android:id="@+id/params_set_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="参数设置"
+            android:paddingLeft="20px"
+        /> 
+</LinearLayout>
 
-    <Button
-        android:id="@+id/download"
-        android:layout_width="fill_parent"
+<LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/check"
-        android:layout_marginTop="10dp"
-        android:text="Check and update directly" />
+        android:orientation="vertical"
+        android:id="@+id/alarm_set"
+        android:layout_weight="1"
+        android:gravity= "center"> 
+        <ImageView
+            android:id="@+id/alarm_set_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/set_alarm"
+            android:background="#00000000"
+        /> 
+        <TextView
+            android:id="@+id/alarm_set_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="报警设置"
+        /> 
+</LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
